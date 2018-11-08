@@ -1,24 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container" id="app">
+    <SourceSelection v-on:sourceChanged="sourceChanged"/>
+    <Newslist v-bind:source="source"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SourceSelection from "./components/SourceSelection";
+import Newslist from "./components/Newslist";
+import 'bootstrap/dist/css/bootstrap.css'
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
+    SourceSelection,
+    Newslist
+  },
+  data() {
+    return {
+      source: ""
+    };
+  },
+  methods: {
+    sourceChanged: function(source) {
+      this.source = source;
+    }
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
