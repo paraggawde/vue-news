@@ -1,4 +1,9 @@
-# vue-news
+# Vue News
+
+> Basic news-app which gives not only headlines, but much more than that. Created with Vue.js and Bootstrap.
+
+## Screenshots of vuenews app
+Coming soon!
 
 ## Project setup
 ```
